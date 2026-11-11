@@ -1,0 +1,2 @@
+import {NextRequest,NextResponse} from 'next/server';import {rankings} from '../../../lib/rankings';
+export function GET(request:NextRequest){const city=request.nextUrl.searchParams.get('city')??undefined;return NextResponse.json({data:rankings(city),count:rankings(city).length});}
